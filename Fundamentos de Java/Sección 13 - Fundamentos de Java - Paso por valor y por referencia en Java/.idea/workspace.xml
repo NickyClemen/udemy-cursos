@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a639304f-cfdd-4e01-8949-5d181af6df2e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XRsflgi7ng25vwtuWWhTiToVe1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
+  </component>
+  <component name="RunManager" selected="Application.PasajeReferencia">
+    <configuration name="PasajeReferencia" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="apuntes.PasajeReferencia" />
+      <module name="ApuntesTrece" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="apuntes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PasoValor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="apuntes.PasoValor" />
+      <module name="ApuntesTrece" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="apuntes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PasajeReferencia" />
+        <item itemvalue="Application.PasoValor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a639304f-cfdd-4e01-8949-5d181af6df2e" name="Default Changelist" comment="" />
+      <created>1581020347195</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581020347195</updated>
+      <workItem from="1581020352046" duration="884000" />
+      <workItem from="1581021267741" duration="2297000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1581023728871">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1581023728871" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1581023728871">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1581023728871" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1581023728871">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1581023728871" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1581023728871">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1581023728871" />
+    <state x="1703" y="14" key="SettingsEditor" timestamp="1581021795503">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state x="1703" y="14" key="SettingsEditor/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1581021795503" />
+    <state x="306" y="154" key="com.intellij.ide.util.TipDialog" timestamp="1581021268883">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="306" y="154" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1581021268883" />
+    <state x="79" y="0" key="new project wizard" timestamp="1581023726627">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="79" y="0" key="new project wizard/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1581023726627" />
+  </component>
+</project>
