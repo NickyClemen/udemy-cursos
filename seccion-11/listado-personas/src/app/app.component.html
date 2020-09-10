@@ -1,0 +1,27 @@
+<div
+  class="box centrado"
+  *ngIf="!isAutenticado()"
+>
+  <a routerLink="/login">Login</a>
+</div>
+
+<div
+  class="box centrado"
+  *ngIf="isAutenticado()"
+>
+  <a
+    (click)="salir()"
+    style="cursor: pointer"
+  >Salir</a>
+</div>
+
+<div class="box" id="heading">
+  <h1>{{ title }}</h1>
+</div>
+
+<router-outlet></router-outlet>
+<!-- Muestra el componente dependiendo de la URL que se muestre en el borwser. -->
+
+
+
+

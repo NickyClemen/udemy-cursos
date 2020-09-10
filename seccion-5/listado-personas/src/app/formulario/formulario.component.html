@@ -1,0 +1,58 @@
+<form action="" class="form-row">
+
+  <div class="form-group col-md-2">
+
+    <label for="nombre" class="sr-only">Nombre:</label>
+    <input
+      type="text"
+      name="nombre"
+      id="nombre"
+      placeholder="Nombre"
+      class="form-control"
+      #nombreInput
+    >
+  <!-- Se está pasando la local reference a todo el elemento HTML. -->
+  <!-- Local reference.
+  La única diferencia con el two-way binding, es que se va a enviar únicamente el valor
+  del elemento que marquemos con una referencia local.
+  Para manejar una referencia local, se usa el #[name]
+  Las local reference son del tipo HTMLInputElement. Se utiliza el value para acceder al
+  valor del elemento.
+  Se pueden poner en cualquier elemento HTML.
+
+
+  Two way binding
+    [(ngModel)]="nombreInput"
+    [(ngModel)]="apellidoInput"
+
+-->
+
+  </div>
+
+  <div class="form-group col-md-2">
+
+    <label for="apellido" class="sr-only">Apellido:</label>
+    <input
+      type="text"
+      name="apellido"
+      id="apellido"
+      placeholder="Apellido"
+      class="form-control"
+      #apellidoInput
+    >
+
+  </div>
+
+  <div class="col">
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      (click)="onAgregarPersona()"
+    >Agregar</button>
+    <!-- (click)="onAgregarPersona(nombreInput, apellidoInput)" -> Los parámetros eran las
+    local reference. -->
+
+  </div>
+
+</form>

@@ -1,0 +1,69 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col">
+
+      <label>Título persona:</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="tituloPersona"
+      >
+      <!-- (input)="onModificarPersona($event)" -->
+      <!-- input: Evento que se dispara cuando se quiere ingresar a un dato. -->
+      {{ tituloPersona }}
+
+      <h1>Lista de personas.</h1>
+      <button class='btn btn-primary'
+        [disabled] ='!agregarPersona'
+        (click)='onCrearPersona()'>Agregar persona</button>
+      <!-- Con la palabra disabled, se deshabilita el botón. -->
+
+      <!-- Directiva -->
+      <p *ngIf="personaCreada; else sinPersona">{{ agregarPersonaStatus }} con título {{ tituloPersona }}</p>
+      <ng-template #sinPersona>
+
+        <p>No se ha agregado ninguna persona.</p>
+
+      </ng-template>
+      <!-- Se utiliza el ng-template para agregar una nueva sección en caso de que no se
+      cumpla el *ngIf. Se le agregar el identificador asignado después del else.
+      Se puede incluir cualquier código HTML. -->
+
+      <app-persona></app-persona>
+
+      <!-- Interpolación: Acceder desde el HTML a la información almacenada en la clase
+      de Typescript.
+
+      Property binding: Otra forma de comunicacióne entre la plantilla HTML y la clase de Typescript.
+      Se coloca entre corchetes el elemento al que se quiere asociar a la propiedad.
+      No se mezcla la interpolación con el property binding.
+        [disabled] ='!agregarPersona';
+
+      Event binding: Asociar eventos a un componente. Se coloca entre '()' para indicar qué
+      evento se quiere escuchar y asociación con un método.
+      No es recomendable agregar lógica de programación dentro del template de HTML.
+        (click)='onCrearPersona()';
+
+      Two-way binding: Combinar property binding con eventi binding (responder a un evento, y
+      modificar una propiedad/atributo de la clase). Enviar información del template al componente,
+      o del componente al template.
+        [(ngModel)]="tituloPersona": Modifica la propiedad automáticamente.
+
+      Directivas: Modificación directa del dom HTML. Las directivas se crean con 'ng' y se
+      autocompleta con la directiva deseada. Modifica dinámicamente el DOM.
+        *ngIf="personaCreada"
+        Agregar un else.
+          *ngIf="personaCreada; else sinPersona"
+          <ng-template #sinPersona>Se agrega el código HTML. </ng-template>
+
+        *ngFor -->
+
+    </div>
+
+  </div>
+
+</div>
+
+

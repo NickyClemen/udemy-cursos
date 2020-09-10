@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-xs-12">
+
+      <h3>{{ title }}</h3>
+
+      <hr>
+
+      <app-formulario
+        (personaCreada)="onPersonaAgregada($event)"
+      ></app-formulario
+        >
+
+      <hr>
+
+    </div>
+
+  </div>
+
+  <app-persona
+    *ngFor="let personaElemento of personas; let i = index"
+    [persona]="personaElemento"
+    [indice]="i"
+  ></app-persona>
+  <!-- Property binding entre componentes -->
+
+</div>

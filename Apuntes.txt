@@ -1,0 +1,40 @@
+New project
+ng new [file-name]
+
+Run project
+ng serve
+
+Flujo de una app en Angular.
+	1) index.html (está en el root del proyecto), dónde está la definición del componente (<app-root>).
+	2) main.ts, dónde está el llamado de la clase AppModule.
+	3) app.module.ts
+		// Decorador importado del core de Angular.
+			@NgModule({
+			  declarations: [
+				AppComponent
+			  ], // Se declaran los componentes que se van a declarar.
+			  imports: [
+				BrowserModule
+			  ], // Se agregan módulos de Angular y otros externos.
+			  providers: [],
+			  bootstrap: [AppComponent] /* Se indica qué componente se va a levantar cuando se esté
+			  iniciando la app. */
+			})
+			export class AppModule { }
+	4) app.component.ts
+		/* Declaración del componente. Decorator. */
+			@Component({
+			  selector: 'app-root',
+			  templateUrl: './app.component.html', // Indica qué index HTML se va a utilizar.
+			  styleUrls: ['./app.component.css'] // Indica el archivo de estilos.
+			})
+			export class AppComponent {
+			  title = 'my-first-app';
+			}
+			
+Elementos de un componente (elementos reutilizables).
+	1) Una clase de Typescript.
+	2) Decorador. 
+		1) Selector: Nombre de la etiqueta del componente.
+		2) Archivo HTML.
+		3= Archivo CSS.

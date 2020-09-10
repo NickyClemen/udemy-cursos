@@ -1,0 +1,15 @@
+<div class="item">
+  <ul>
+    <li>
+      <a
+        [routerLink]="['/personas', indice]"
+        [queryParams]="{ modoEdicion:'1' }"
+      >
+        <!-- [queryParams]="{ modoEdicion: '1' }" Agrega parámetros. -->
+      {{ persona.nombre }} {{ persona.apellido }}
+      </a>
+    </li>
+    <!-- Router link: Es como href, pero es un atributo de Angular. Permite especificar una ruta que está
+    mapeada en AppRouting. Se puede usar con property binding en casos de que se quiera pasar un parámetro. -->
+  </ul>
+</div>
