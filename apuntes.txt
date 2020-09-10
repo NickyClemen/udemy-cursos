@@ -1,0 +1,56 @@
+REST: Transferencia de estado representacional - Representational State Transfer. Protocolo cliente-servidor sin estado (stateless).
+No se manejan decisiones en el backend, sino en el frontend. Se reciben del backend respuestas en formato JSON.
+La transferencia de datos se hace por medio de endpoint, que es una URI, que hace una petición HTTP al servidor.
+La mayoría de los métodos, corresponden a operaciones CRUD.
+
+application.properties: Sobreescribe las configuracions por default.
+Todas las clases de lógica de negocio, tienen que estar dentro del package principal de Spring para que las reconozca.
+
+@ComponentScan busca y registra en el contenedor de Spring todas las clasea anotadas con @RestController, @Controller, @Component, @Repository (clases DAO), y @Service.
+
+Clase de acceso a datos (Repository)(DAO). Acceder, realizar consultar y operaciones en la base.
+
+CORS: Interactúa entre el cliente y el servidor para determinar si es seguro permitir las peticiones de origen cruzado.
+	1) Se envía un pre-request indicando qué peticiones tiene permitidas el dominio.
+	2) Se envía un request para saber si el dominio tiene acceso al recurso. Si es así, devuelve el archivo indicado.
+
+Conectar Angular con Spring.
+	Async Http Request URI Endpoint
+	Http Response JSON
+
+Angular
+	e2e -> Carpeta con la configuración para testing.
+	.editorconfig: Configuración del editor.
+
+JWT (JSON Web Token): Se utiliza para comunicar el front end con el backend. Envía un token para validar los login. Evita tener que
+guardar sesiones. Stadard abierto para agregar seguridad a las apps API Rest (standard RFC 7519). Interpreta y crea los token.
+El token queda en el servidor (certificado) es con la llave pública y privada.
+Son compactos; se pueden enviar por petición web (URL, parámetros POST). Se recomienda mandarlo en los headers.
+La transacción es más ligera, y no hace falta almacenar sesiones en el servidor.
+Al ser posible su decodificación, no hay que enviar infomación sensible.
+Buena práctica es poenrle fecha de vencimiento (por default es no lo tiene).
+Son sesión es Stateful (con estado). Stateless (sin estado. Tiene una persistencia).
+
+Spring Security: Framework integrado para seguridad. Maneja Autorización y Autenticación.
+Autenticación: Proceso de establecer un principal (usuario, dispositivo, o algún sistema que pueda ejecutar acciones sobre el programa). En general, permite a los principalesautenticarse en base a cualquier proveedor de seguridad. Por ejemplo, LDAP, base de datos relacional, o Autenticación HTTP. 
+Autorización: Proceso de decidir si se otorga acceso a un usuario para realizar una acción dentro de la aplicación, es decir, controlar el acceso a los recursos por medio de la asignación de roles, y permisos a grupos de usuarios.
+Consiste en dos partes:
+	1) Authorization Server: Se encarga de la autenticación. Retorna el JWT.
+	2) Resource Server: Administra permisos y accesos. Filtro de Spring: OAuth2AutheticationProcessingFilter (valida y da acceso a las 	peticiones HTTP. Si son válidas, devuelve las respuestas en ls headers).
+
+Algoritmo: HS256. Es un MAC (código de autenticación de mensajes), que está codificado en clave HASH. Se utiliza para firmar cuando se crea el token, para validarlo y verificar su integridad.
+RS256: Código de tipo RSA. Requiere un certificado público y privado. Se genera el token con la clave privada, y con la pública, se valida la integridad del token. Es más robusto.
+
+En JwtAccessTokenAdapter, si no se especifica la MAC, se genera de forma automática. Se maneja en el servidor, no en el cliente.
+MAC: Puede ser cualquier clave alfanumérica. Lo guarda como un MACSigner.
+RSA: Si comienda con la palabra BEGIN, lo registra en RsaSigner.
+
+Crear RSA privado
+openssl genrsa -out jwt.pem
+Mostrar
+openssl rsa -in jwt.pem
+
+Mostrar clave pública
+openssl rsa -in jwt.pem -pubout
+
+Crear una clase que implemente una interfaz específica (TokenEnhancer - Token potenciador). Permite agregar nueva información.
