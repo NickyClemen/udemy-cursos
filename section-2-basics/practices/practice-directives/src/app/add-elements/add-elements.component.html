@@ -1,0 +1,21 @@
+<label for="">Ingresa un valor:</label>
+<input
+  type="text"
+  class="form-control"
+  (input)="viewValue($event)"
+>
+
+<p *ngIf="noneDisplay">Cirilla es infumable.</p>
+
+<button
+  class="btn btn-primary"
+  (click)="pushValue()"
+>Display Details</button>
+
+<p
+  *ngFor="let value of allValues; let i = index"
+  [ngStyle]="{ background: i >= 5 ? '#00ff' : 'transparent' }"
+  [ngClass]="{ fontColor: i >= 5 }">{{ value }}</p>
+
+
+

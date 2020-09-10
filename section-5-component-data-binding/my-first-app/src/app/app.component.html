@@ -1,0 +1,43 @@
+<div class="container">
+  <app-cockpit
+    (serverCreated)="onServerAdded($event)"
+    (bpCreated)="onBlueprintAdded($event)"
+  ></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+
+      <button
+        class="btn btn-primary"
+        (click)="onChangeFirst()"
+      >Change first element</button>
+
+      <button
+        class="btn btn-danger"
+        (click)="onDestroyFirst()"
+      >Destroy first element</button>
+
+
+      <app-server-element
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement"
+        [name]="serverElement.name"
+      >
+
+        <p #contentParagraph>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
+        <!-- Por dedault, lo que está entre las etiquetas del componente no existen.
+        Hay una directive para evitar éste comportamiento. -->
+
+      </app-server-element>
+      <!-- Se utiliza property binding para enlazar las propiedades de dos elementos.
+      Por efecto, las propiedades de los componentes solamente pueden ser accedidos por dentro,
+      no desde afuera.
+      Hay que especificar qué propiedades pueden estar disponibles desde afuera.
+      Para definir que una propiedad es "exportable", hay que usar el decorator @Input.
+      Para hacer un binding de un custom event, hay que igualar una propiedad al evento que se quiere llamar. -->
+    </div>
+  </div>
+</div>

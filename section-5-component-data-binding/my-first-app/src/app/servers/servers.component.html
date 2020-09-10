@@ -1,0 +1,32 @@
+<label for="">Server Name</label>
+<!-- <input
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)"
+> -->
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName"
+>
+<!-- Two-way binding: Combinación de property binding y event binding.
+Toma el input, y lo actualiza automáticamente. -->
+
+<!-- <p>{{ serverName }}</p> -->
+<!-- La palabra reservada $event es muy importante para el uso del Event Binding porque da acceso
+a los datos del evento que se dispare en el DOM.
+El target del evento es dónde ocurre todo. -->
+
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()">Add server</button>
+<!-- Property binding setea una propiedad en un elemento específico del DOM.
+No se puede combinar string interpolation con property binding. -->
+
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated">Server was created. Server name is {{ serverName }}.</p>
+<!-- <p *ngIf="serverCreated; else noServer">Server was created. Server name is {{ serverName }}.</p> <ng-template #noServer><p>No server was created.</p></ng-template> -->
+<!-- Local reference: Termine la comunicación entre componentes. -->
+<app-server *ngFor="let server of servers"></app-server>
+<!-- Se utiliza el * para indicar que es una estructira directiva. -->

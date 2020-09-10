@@ -1,0 +1,13 @@
+p {
+  color: blue;
+} /* Angular fuerza el encapsulamiento de los estilos de CSS para el componente al que está
+asignado.
+Le asigna una única clase a los elementos para que no se repitan, y poder asignar los estilos
+sin repetirse.
+Shadow DOM es un comportamiento que no está supportado por todos los navegadores.
+En él, cuando se tiene que asignar estilos a un elemento.
+
+Para evitar la colisión de estilos entre componentes, existe un Shadow DOM, que es un DOM encapsulado
+dentro del DOM principal.
+
+Angular crea un 'shadow-root', dónde almacena todos los estilos. */

@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new Servers or blueprints!</p>
+    <label>Server Name</label>
+    <!-- Two-way binding -->
+    <!-- <input type="text" class="form-control" [(ngModel)]="newServerName"> -->
+    <!-- Local reference -->
+    <input
+      type="text"
+      class="form-control"
+      #serverNameInput
+    >
+    <!-- Una local reference se puede colocar en cualquier elemento HTML, lo que almacena
+    el elemento con todas sus propiedades.
+    Se nombra agregando un # y un nombre a elección: #[name].
+    Importante: Hace referencia a un único elemento HTML.
+    Pueden ser utilizadas en cualquier parte del template, no en el código Typescript.-->
+    <label>Server Content</label>
+    <!-- <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+    <input
+      type="text"
+      class="form-control"
+      #serverContentInput
+    >
+    <!-- Hay otra manera de acceder a las local reference o a cualquier elemento directamente
+    del código Typescript.
+    Hay veces que se quiere acceder al elemento antes de llamar un método, por lo que hay un
+    decorator que permite el acceso desde el código. -->
+    <br>
+    <button
+      class="btn btn-primary"
+      (click)="onAddServer(serverNameInput)"
+    >Add Server</button>
+    <button
+      class="btn btn-primary"
+      (click)="onAddBlueprint(serverNameInput)"
+    >Add Server Blueprint</button>
+  </div>
+</div>

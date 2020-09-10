@@ -1,0 +1,14 @@
+<div
+  class="panel panel-default"
+>
+  <!-- <div class="panel-heading">{{ element.name }}</div> -->
+  <div class="panel-heading" #heading>{{ name }}</div>
+    <div class="panel-body">
+      <ng-content></ng-content>
+      <!-- Sirve para agregar contenido, y evitar que Nagular borre el elemento.
+      Proyecta contenido dentro del elemento.
+      Está pensando para hacer contenido re utilizable, y evitar hacwr property binding. -->
+    </div>
+  </div>
+
+

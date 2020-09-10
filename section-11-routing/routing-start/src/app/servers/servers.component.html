@@ -1,0 +1,20 @@
+<div class="row mt-5">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a
+        href="#"
+        class="list-group-item"
+        *ngFor="let server of servers">
+        {{ server.name }}
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <a routerLink="servers">Reload page</a>
+    <!-- Si se le pasa una ruta absoluta, da error porque no existe. Si se pasa una relativa, no recarga, -->
+    <app-edit-server></app-edit-server>
+    <hr>
+    <app-server></app-server>
+  </div>
+</div>
+

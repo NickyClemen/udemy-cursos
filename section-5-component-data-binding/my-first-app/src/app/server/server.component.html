@@ -1,0 +1,18 @@
+<p
+  [ngStyle]="{ 'background': getColor() }"
+  [ngClass]="{ online: serverStatus === 'online' }">{{ 'Server' }} with ID {{ serverId }} is {{ getStatus() }}.</p>
+<!-- String interpolation
+Se puede enviar strings, siempre y cuando no sean multilínea, un condicional o un bucle.
+Se puede usar operadores ternarios.
+La interpolación funciona si el retorno es un string. No rompe con el valor entero, porque es fácilmente
+casteado a un string. -->
+
+<!-- ngStyle: Directiva para agregar dinámicamente estilos a los elementos del DOM. Ésta instrucción
+espera un objeto literal. Espera com key-value pairs la propiedad y el valor de los estilos. El value
+puede ser un método.
+Los [] indican que se quiere atar la directiva a una propiedad. -->
+
+<!-- ngClass: Directiva que cambia (agrega o elimina) dinámicamente las clases de los elementos HTML.
+Funciona únicamente con property binding.
+Se le pasa un objeto. La key, es la clase, y el value la condición para que esa clase sea removida
+o agregada. -->

@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+      <ul class="list-group">
+
+        <div *ngIf="onlyOdd">
+
+          <li
+            class="list-group-item"
+            [ngClass]="{ odd: odd % 2 !== 0 }"
+            [ngStyle]="{ background: odd % 2 !== 0 ? 'yellow' : 'transparent' }"
+            *ngFor="let odd of oddNumbers"
+          >{{ odd }}</li>
+
+        </div>
+
+        <!-- <div *ngIf="!onlyOdd">
+
+          <li
+            class="list-group-item"
+            [ngClass]="{ odd: even % 2 !== 0 }"
+            *ngFor="let even of evenNumbers"
+            [ngStyle]="{ background: even % 2 !== 0 ? 'yellow' : 'transparent' }"
+          >{{ even }}</li>
+
+        </div>
+
+        <ng-template [ngIf]="onlyOdd">
+
+          <div>
+
+            <li
+              class="list-group-item"
+              [ngClass]="{ odd: even % 2 !== 0 }"
+              *ngFor="let even of evenNumbers"
+              [ngStyle]="{ background: even % 2 !== 0 ? 'yellow' : 'transparent' }"
+            >{{ even }}</li>
+
+          </div>
+
+        </ng-template> -->
+        <!-- En ésta etiqueta va el conteniendo que se quiere crear condicionalmente.
+        No es un elemento que se renderice por sí mismo, por lo que se utiliza property binding para hacer
+       que se renderice. -->
+
+       <div *appUnless="onlyOdd">
+
+        <li
+          class="list-group-item"
+          [ngClass]="{ odd: even % 2 !== 0 }"
+          *ngFor="let even of evenNumbers"
+          [ngStyle]="{ background: even % 2 !== 0 ? 'yellow' : 'transparent' }"
+        >{{ even }}</li>
+
+      </div>
+
+      </ul>
+      <!-- Attribute directives: Se utiliza para setearle clases a los elementos. Los elementos no se ven afectados.
+      Se alteran propiedades.
+      Structural directives: Cambia la estructura del DOM alrededor del elemento. Los elementos se ven afectados.
+      Se altera el elemento.
+      No se puede tener más de una structural directive en un elemento.
+      Los [] indican que se está bindeando a una propiedad. -->
+
+      <p appBasicHighlight>Style me with basic directive!</p>
+      <!-- No hay que pasar ningún valor, ni usar la notación de []. -->
+      <p
+        [appBetterHighlight]="'red'"
+        defaultColor="yellow"
+      >Style me with better directive!</p> <!-- Es muy importante ver que ahora la directiva está encerrada en
+      sí misma. Es opcional. Solamente se usa si el alias es el mismo que el de la directiva. -->
+      <!-- ¿Cómo hace Angular para diferenciar si un default color, o una property de una directiva?
+      Va comprobando las directivas hasta llegar a las propiedades nativas.
+      Muy importante, es que se pueden agregar las directivas colocándolas en el elemento con notación de
+      [].
+      Se utiliza [ngClass] si se tiene una propiedad principal o una sola propiedad para atar. -->
+      <!-- Se pueden omitir las [] si se pasa un string sin las ''. -->
+
+      <div [ngSwitch]="value">
+
+        <p *ngSwitchCase="5">Value is 5.</p>
+        <p *ngSwitchCase="10">Value is 10.</p>
+        <p *ngSwitchCase="100">Value is 100.</p>
+        <p *ngSwitchDefault>Value is Default.</p>
+
+      </div>
+      <!-- El ngSwitch se usa con property binding. Se le pasa la condición. -->
+
+    </div>
+  </div>
+</div>
