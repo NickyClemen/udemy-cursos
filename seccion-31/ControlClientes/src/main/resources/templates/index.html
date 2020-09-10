@@ -1,0 +1,39 @@
+<!DOCTYPE html> <!-- Para manejar información dinámica con Thymeleaf. -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring MVC</title>
+</head>
+<body>
+    <header th:replace="layouts/layout :: header"></header> <!-- Indica qué elemento se va a insertar. No se especifica la
+    extensión del archivo. Los "::" indican que va el nombre del fragment. -->
+    <a th:href="@{/agregar}">[[#{persona.crear}]]</a>
+    <div th:if="${personas != null and !personas.empty}"> <!-- Condicional. -->
+        <table border="1">
+            <tr>
+                <th>[[#{table.name}]]</th>
+                <th>[[#{table.lastName}]]</th>
+                <th>[[#{table.email}]]</th>
+                <th>[[#{table.phone}]]</th>
+                <th>[[#{table.edit}]]</th>
+                <th>[[#{table.delete}]]</th>
+            </tr>
+
+            <tr th:each="persona : ${personas}"> <!-- Iteración. -->
+                <td th:text="${persona.nombre}">Mostrar nombre</td>
+                <td th:text="${persona.apellido}">Mostrar apellido</td>
+                <td th:text="${persona.email}">Mostrar email</td>
+                <td th:text="${persona.telefono}">Mostrar teléfono</td>
+                <td><a th:href="@{/editar/} + ${persona.idPersona}" th:text="#{table.edit}"></a></td>
+                <td><a th:href="@{/eliminar(idPersona=${persona.idPersona})}" th:text="#{table.delete}"></a></td>
+                <!-- Query param -->
+            </tr>
+        </table>
+    </div>
+    <div th:if="${personas == null or personas.empty}">
+        <p th:text="#{table.lista-vacia}"></p>
+    </div>
+
+    <footer th:replace="layouts/layout :: footer"></footer>
+</body>
+</html>

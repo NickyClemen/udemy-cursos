@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "index.saludo",
+      "type": "java.lang.String",
+      "description": "Description for index.saludo."
+    }
+  ] }

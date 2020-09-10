@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<!-- Sacar posibles warning: xmlns:th="http://www.w3.org/1999/xhtml" Obliga a que se cierren todas las etiquetas HTML. -->
+<head>
+    <meta charset="UTF-8">
+    <title>Datos de la persona</title>
+</head>
+<body>
+    <header th:replace="layouts/layout :: header"></header>
+    <h2>[[#{modificar.title}]]</h2>
+    <a th:href="@{/}">[[#{modificar.volver}]]</a>
+
+    <br>
+
+    <form th:action="@{/guardar}" method="post" th:object="${persona}">
+    <!-- th:object="${ persona }": Asocia un fomulario a un objeto. -->
+        <input type="hidden" name="idPersona" th:field="*{idPersona}">
+
+        <br>
+
+        <label for="nombre">[[#{table.name}]]:</label>
+        <input type="text" name="nombre" th:field="*{nombre}" /> <!-- th:field="*{ nombre }": Para asociar el input a un atributo. -->
+        <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">El campo se encuentra vacío.</span>
+        <br>
+
+        <label for="apellido">[[#{table.lastName}]]:</label>
+        <input type="text" name="apellido" th:field="*{apellido}" />
+        <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">El campo se encuentra vacío.</span>
+        <br>
+
+        <label for="email">[[#{table.email}]]:</label>
+        <input type="text" name="email" th:field="*{email}" />
+        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">El campo se encuentra vacío.</span>
+        <br>
+
+        <label for="telefono">[[#{table.phone}]]:</label>
+        <input type="text" name="telefono" th:field="*{telefono}" />
+
+        <br>
+
+        <input type="submit" name="guardar" th:value="#{modificar.save}">
+    </form>
+
+    <footer th:replace="layouts/layout :: footer"></footer>
+</body>
+</html>

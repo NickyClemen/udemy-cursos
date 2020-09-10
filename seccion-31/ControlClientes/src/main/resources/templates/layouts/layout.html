@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:\\www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout</title>
+</head>
+<body>
+    <header th:fragment="header">
+        <h1 th:text="#{plantilla.titulo}"></h1> <!-- Toma el valor de la plantilla. -->
+    </header>
+    <!-- th:fragment sirve para crear un componente que puede ser llamado desde otras páginas. -->
+
+    <footer th:fragment="footer">
+        <div>
+            <br>
+            <a th:href="@{/(lang=en)}">EN</a> | <!-- @ son links. -->
+            <a th:href="@{/(lang=es)}">ES</a> |
+            <span>&copy; [[#{plantilla.pie-pagina}]]</span> <!-- Si se usa th:text, se reemplaza el texto y se pierden valores. De la segunda manera, no se pierde,
+            ya que se inserta. -->
+        </div>
+    </footer>
+</body>
+</html>

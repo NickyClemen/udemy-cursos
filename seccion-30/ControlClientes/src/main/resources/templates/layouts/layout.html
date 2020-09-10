@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:\\www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout</title>
+</head>
+<body>
+    <header th:fragment="header">
+        <h1>Control de clientes</h1>
+    </header>
+    <!-- th:fragment sirve para crear un componente que puede ser llamado desde otras páginas. -->
+
+    <footer th:fragment="footer">
+        <p>&copy; Derechos reservados.</p>
+    </footer>
+</body>
+</html>

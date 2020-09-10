@@ -1,0 +1,60 @@
+<!DOCTYPE html> <!-- Para manejar información dinámica con Thymeleaf. -->
+<html lang="en" xmlns:th="http://www.thymeleag.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring MVC</title>
+</head>
+<body>
+    <h1>Inicio</h1>
+    <p th:text="Cache."></p> <!-- th:text envía información al elemento. -->
+    <p th:text="${ mensaje }"></p> <!-- ${ expression language } Tiene que ser el key. -->
+    <p th:text="${ saludo }"></p>
+
+    <br>
+
+    <div th:if="${ personas != null and !personas.empty }"> <!-- Condicional. -->
+        <table border="1">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+            </tr>
+
+            <tr th:each="persona : ${ personas }"> <!-- Iteración. -->
+                <td th:text="${ persona.nombre }"></td>
+                <td th:text="${ persona.apellido }"></td>
+                <td th:text="${ persona.email }"></td>
+                <td th:text="${ persona.telefono }"></td>
+            </tr>
+        </table>
+    </div>
+    <div th:if="${ personas == null or personas.empty }">
+        <p>La lista está vacía.</p>
+    </div>
+
+    <!-- <h4>Nombre:</h4>
+    <span th:text="${ nicole.nombre }"></span>
+
+    <h4>Apellido:</h4>
+    <span th:text="${ nicole.apellido }"></span>
+
+    <h4>Email:</h4>
+    <span th:text="${ nicole.email }"></span>
+
+    <h4>Teléfono:</h4>
+    <span th:text="${ nicole.telefono }"></span>
+
+    <h4>Nombre:</h4>
+    <span th:text="${ cirilla.nombre }"></span>
+
+    <h4>Apellido:</h4>
+    <span th:text="${ cirilla.apellido }"></span>
+
+    <h4>Email:</h4>
+    <span th:text="${ cirilla.email }"></span>
+
+    <h4>Teléfono:</h4>
+    <span th:text="${ cirilla.telefono }"></span> -->
+</body>
+</html>

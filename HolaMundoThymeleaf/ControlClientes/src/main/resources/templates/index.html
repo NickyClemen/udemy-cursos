@@ -1,0 +1,30 @@
+<!DOCTYPE html> <!-- Para manejar información dinámica con Thymeleaf. -->
+<html lang="en" xmlns:th="http://www.thymeleag.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring MVC</title>
+</head>
+<body>
+    <h1>Inicio</h1>
+    <div th:if="${ personas != null and !personas.empty }"> <!-- Condicional. -->
+        <table border="1">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+            </tr>
+
+            <tr th:each="persona : ${ personas }"> <!-- Iteración. -->
+                <td th:text="${ persona.nombre }"></td>
+                <td th:text="${ persona.apellido }"></td>
+                <td th:text="${ persona.email }"></td>
+                <td th:text="${ persona.telefono }"></td>
+            </tr>
+        </table>
+    </div>
+    <div th:if="${ personas == null or personas.empty }">
+        <p>La lista está vacía.</p>
+    </div>
+</body>
+</html>
